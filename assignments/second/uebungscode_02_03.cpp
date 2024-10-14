@@ -24,22 +24,22 @@ int lies_ganzzahl();
 double lies_gleitkommazahl();
 
 
-void ablauf_diagram_1(){
-  /*************************************/
-  /*                                   */
-  /*  Hier kommt der Programmcode hin  */
-  /*                                   */
-  /*************************************/
-  
+void ablauf_diagram_1() {
+  int x = lies_ganzzahl();
+  x = x * x;
+  drucke_ganzzahl(x);
 }
 
-void ablauf_diagram_2(){
-  /*************************************/
-  /*                                   */
-  /*  Hier kommt der Programmcode hin  */
-  /*                                   */
-  /*************************************/
-  
+void ablauf_diagram_2() {
+  int x = lies_ganzzahl();
+  if (x < 0) {
+    drucke_text("Ungültige Eingabe, x >= 0!");
+    return;
+  }
+  while (x >= 2) {
+    x = x - 2;
+  }
+  drucke_ganzzahl(x);
 }
 
 void programm_1() {
@@ -61,33 +61,50 @@ sind. Das Modul soll so verstanden werden, dass es den Teilnehmer:innen im Ansch
 dieses Modul leicht fällt andere, objektorientierte Programmiersprachen zu erlernen. Hier soll\
 man sich nur noch die Frage stellen: Wie setzten andere Programmiersprachen die wesentlichen\
 Konzepte um und was gibt es bei der Sprachsyntax zu beachten?";
-  /*************************************/
-  /*                                   */
-  /*  Hier kommt der Programmcode hin  */
-  /*                                   */
-  /*************************************/
-  
+  int punctuation_characters = 0;
+  for (int index = 0; index < text.length(); index++) {
+    const char character = text[index];
+    if (character == '.' || character == '?' || character == '!') {
+      punctuation_characters++;
+    }
+  }
+  drucke_ganzzahl(punctuation_characters);
 }
 
 
 void programm_3() {
   std::vector<int> zahlen = {42, 69, 420, 99, -444, 9014};
-  /*************************************/
-  /*                                   */
-  /*  Hier kommt der Programmcode hin  */
-  /*                                   */
-  /*************************************/
-  
+  double sum = 0;
+  for (int index = 0; index < zahlen.size(); index++) {
+    sum += zahlen[index];
+  }
+  /*
+  // Normally/alternatively:
+  for (int index : zahlen) {
+    sum += index;
+  }
+  */
+  drucke_kommazahl(sum/zahlen.size());
 }
 
 
 void programm_4() {
-  /*************************************/
-  /*                                   */
-  /*  Hier kommt der Programmcode hin  */
-  /*                                   */
-  /*************************************/
-  
+  int x = lies_ganzzahl();
+  // Short version: x = std::pow(x, 218);
+  // Won't work due to limitations of `int` type -> prints 0
+  int t = x;
+  t = t*t;
+  t = x*t;
+  t = t*t;
+  t = t*t;
+  t = x*t;
+  t = t*t;
+  t = x*t;
+  t = t*t;
+  t = t*t;
+  t = x*t;
+  t = t*t;
+  drucke_ganzzahl(t);
 }
 
 
