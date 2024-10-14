@@ -1,5 +1,6 @@
 // Zur Blatt 02 Aufgabe 04
 
+#include <chrono>
 #include <cmath>
 #include <iostream>
 #include <string>
@@ -25,12 +26,21 @@ double lies_gleitkommazahl();
 
 
 void alter_von_alan_turing_erraten() {
-  /*************************************/
-  /*                                   */
-  /*  Hier kommt der Programmcode hin  */
-  /*                                   */
-  /*************************************/
-  
+  // A cooler approach would be to dynamically fetch the year,
+  // but this is a pain in the *** in C++.
+  constexpr int correct_age = 2024 - 1912;
+  int guessed = 0;
+  while (guessed != correct_age) {
+    drucke_text("Wie alt würde Alan Turing diese Jahr werden?");
+    guessed = lies_ganzzahl();
+    if (guessed > correct_age) {
+      drucke_text("Das stimmt leider nicht, Turing wäre jünger!");
+    } else if (guessed < correct_age) {
+      drucke_text("Das stimmt leider nicht, Turing wäre älter!");
+    }
+  }
+  drucke_text("Du hast das Alter richtig erraten, Turing würde " +
+    std::to_string(correct_age) + " Jahre alt werden!");
 }
 
 

@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(first_assignment assignments/first/assignment.cpp)
 add_executable(second_task_2 assignments/second/uebungscode_02_03.cpp)
+add_executable(second_task_3 assignments/second/uebungscode_02_04.cpp)
