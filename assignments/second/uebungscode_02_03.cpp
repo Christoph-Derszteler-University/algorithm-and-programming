@@ -43,12 +43,13 @@ void ablauf_diagram_2() {
 }
 
 void programm_1() {
-  /*************************************/
-  /*                                   */
-  /*  Hier kommt der Programmcode hin  */
-  /*                                   */
-  /*************************************/
-  
+  int x = lies_ganzzahl();
+  // 'y' could be replaced with 'x'
+  int y = x;
+  y = y + 17;
+  y = y * 3;
+  y = y % 2;
+  drucke_ganzzahl(y);
 }
 
 
