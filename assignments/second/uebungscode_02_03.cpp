@@ -90,10 +90,10 @@ void programm_3() {
 
 
 void programm_4() {
-  int x = lies_ganzzahl();
+  // Using a double to avoid running into binary size limitations
+  double x = lies_gleitkommazahl();
   // Short version: x = std::pow(x, 218);
-  // Won't work due to limitations of `int` type -> prints 0
-  int t = x;
+  double t = x;
   t = t*t;
   t = x*t;
   t = t*t;
@@ -105,7 +105,7 @@ void programm_4() {
   t = t*t;
   t = x*t;
   t = t*t;
-  drucke_ganzzahl(t);
+  drucke_kommazahl(t);
 }
 
 
