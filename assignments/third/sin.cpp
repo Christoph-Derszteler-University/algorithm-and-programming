@@ -1,51 +1,118 @@
 #include <cmath>
+#include <format>
 #include <iostream>
 
 constexpr double irrelevant_factor = 1e-8;
+constexpr double pi = std::numbers::pi;
 
-double sin(double x) {
+constexpr double sin(double theta, double tolerance);
+
+constexpr double sin(double theta);
+
+constexpr double cos(double theta, double tolerance);
+
+constexpr double cos(double theta);
+
+constexpr double tan(double theta, double tolerance);
+
+constexpr double tan(double theta);
+
+constexpr double cot(double theta, double tolerance);
+
+constexpr double cot(double theta);
+
+int main() {
+  std::cout << std::format(
+    "sin(0, 2): {}, sin(PI/2, 2): {}, sin(PI, 2): {}",
+    sin(0),
+    sin(pi / 2),
+    sin(pi)
+  ) << std::endl;
+  std::cout << std::format(
+    "sin(0, 2): {}, sin(PI/2, 2): {}, sin(PI, 2): {}",
+    sin(0, 2),
+    sin(pi / 2, 2),
+    sin(pi, 2)
+  ) << std::endl;
+
+  std::cout << std::format(
+    "cos(0, 2): {}, cos(PI/2, 2): {}, cos(PI, 2): {}",
+    cos(0),
+    cos(pi / 2),
+    cos(pi)
+  ) << std::endl;
+  std::cout << std::format(
+    "cos(0, 2): {}, cos(PI/2, 2): {}, cos(PI, 2): {}",
+    cos(0, 2),
+    cos(pi / 2, 2),
+    cos(pi, 2)
+  ) << std::endl;
+
+  std::cout << std::format(
+    "tan(0, 2): {}, tan(PI/2, 2): {}, tan(PI, 2): {}",
+    tan(0),
+    tan(pi / 2),
+    tan(pi)
+  ) << std::endl;
+  std::cout << std::format(
+    "tan(0, 2): {}, tan(PI/2, 2): {}, tan(PI, 2): {}",
+    tan(0, 2),
+    tan(pi / 2, 2),
+    tan(pi, 2)
+  ) << std::endl;
+
+  std::cout << std::format(
+    "cot(0, 2): {}, cot(PI/2, 2): {}, cot(PI, 2): {}",
+    cot(0),
+    cot(pi / 2),
+    cot(pi)
+  ) << std::endl;
+  std::cout << std::format(
+    "cot(0, 2): {}, cot(PI/2, 2): {}, cot(PI, 2): {}",
+    cot(0, 2),
+    cot(pi / 2, 2),
+    cot(pi, 2)
+  ) << std::endl;
+}
+
+constexpr double sin(double theta, double tolerance) {
   double sin = 0;
-  double sum = x;
+  double sum = theta;
 
-  // std::cout << "1" << std::endl;
-  for (int index = 3; std::fabs(sum) > irrelevant_factor; index += 2) {
-    // std::cout << "2 " << std::abs(sum) << ", " << irrelevant_factor << ", " << (std::fabs(sum) < irrelevant_factor) << std::endl;
+  for (int index = 3; std::fabs(sum) > tolerance; index += 2) {
     sin += sum;
-    sum = -(sum*x*x) / ((index) * (index-1));
+    sum = -(sum * theta * theta) / (index * (index - 1));
   }
-  // std::cout << "2" << std::endl;
 
   return sin;
 }
 
-double cos(double x) {
-  // Otherwise, could be approximated similarly as above
-  // (instead of odd indices, even indices)
-  return sin(x + (std::numbers::pi/2));
+constexpr double sin(double theta) {
+  return sin(theta, irrelevant_factor);
 }
 
-double tan(double x) {
-  return sin(x) / cos(x);
+constexpr double cos(double theta, double tolerance) {
+  // Could also be approximated similarly as above
+  // (use odd indices instead of even indices)
+  return sin(theta + (std::numbers::pi / 2), tolerance);
 }
 
-double cot(double x) {
-  return cos(x) / sin(x);
+constexpr double cos(double theta) {
+  return cos(theta, irrelevant_factor);
 }
 
-int main() {
-  std::cout << "sin(0): " << sin(0) << std::endl;
-  std::cout << "sin(PI/2): " << sin(std::numbers::pi / 2) << std::endl;
-  std::cout << "sin(PI): " << sin(std::numbers::pi) << std::endl << std::endl;
+constexpr double tan(double theta, double tolerance) {
+  return sin(theta, tolerance) / cos(theta, tolerance);
+}
 
-  std::cout << "cos(0): " << cos(0) << std::endl;
-  std::cout << "cos(PI/2): " << cos(std::numbers::pi / 2) << std::endl;
-  std::cout << "cos(PI): " << cos(std::numbers::pi) << std::endl << std::endl;
+constexpr double tan(double theta) {
+  return tan(theta, irrelevant_factor);
+}
 
-  std::cout << "tan(0): " << tan(0) << std::endl;
-  std::cout << "tan(PI/2): " << tan(std::numbers::pi / 2) << std::endl;
-  std::cout << "tan(PI): " << tan(std::numbers::pi) << std::endl << std::endl;
+constexpr double cot(double theta, double tolerance) {
+  return cos(theta, tolerance) / sin(theta, tolerance);
+}
 
-  std::cout << "cot(0): " << cot(0) << std::endl;
-  std::cout << "cot(PI/2): " << cot(std::numbers::pi / 2) << std::endl;
-  std::cout << "cot(PI): " << cot(std::numbers::pi) << std::endl << std::endl;
+constexpr double cot(double theta) {
+  return cot(theta, irrelevant_factor);
 }
