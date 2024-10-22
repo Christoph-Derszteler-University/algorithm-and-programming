@@ -22,57 +22,37 @@ constexpr double cot(double theta, double tolerance);
 constexpr double cot(double theta);
 
 int main() {
-  std::cout << std::format(
-    "sin(0, 2): {}, sin(PI/2, 2): {}, sin(PI, 2): {}",
-    sin(0),
-    sin(pi / 2),
-    sin(pi)
-  ) << std::endl;
-  std::cout << std::format(
-    "sin(0, 2): {}, sin(PI/2, 2): {}, sin(PI, 2): {}",
-    sin(0, 2),
-    sin(pi / 2, 2),
-    sin(pi, 2)
-  ) << std::endl;
+  std::cout
+    << std::format("sin(0, 2): {}, sin(PI/2, 2): {}, sin(PI, 2): {}", sin(0), sin(pi / 2), sin(pi))
+    << std::endl;
+  std::cout
+    << std::format("sin(0, 2): {}, sin(PI/2, 2): {}, sin(PI, 2): {}", sin(0, 2), sin(pi / 2, 2), sin(pi, 2))
+    << std::endl
+    << std::endl;
 
-  std::cout << std::format(
-    "cos(0, 2): {}, cos(PI/2, 2): {}, cos(PI, 2): {}",
-    cos(0),
-    cos(pi / 2),
-    cos(pi)
-  ) << std::endl;
-  std::cout << std::format(
-    "cos(0, 2): {}, cos(PI/2, 2): {}, cos(PI, 2): {}",
-    cos(0, 2),
-    cos(pi / 2, 2),
-    cos(pi, 2)
-  ) << std::endl;
+  std::cout
+    << std::format("cos(0, 2): {}, cos(PI/2, 2): {}, cos(PI, 2): {}", cos(0), cos(pi / 2), cos(pi))
+    << std::endl;
+  std::cout
+    << std::format("cos(0, 2): {}, cos(PI/2, 2): {}, cos(PI, 2): {}", cos(0, 2), cos(pi / 2, 2), cos(pi, 2) )
+    << std::endl
+    << std::endl;
 
-  std::cout << std::format(
-    "tan(0, 2): {}, tan(PI/2, 2): {}, tan(PI, 2): {}",
-    tan(0),
-    tan(pi / 2),
-    tan(pi)
-  ) << std::endl;
-  std::cout << std::format(
-    "tan(0, 2): {}, tan(PI/2, 2): {}, tan(PI, 2): {}",
-    tan(0, 2),
-    tan(pi / 2, 2),
-    tan(pi, 2)
-  ) << std::endl;
+  std::cout
+    << std::format("tan(0, 2): {}, tan(PI/2, 2): {}, tan(PI, 2): {}", tan(0), tan(pi / 2), tan(pi))
+    << std::endl;
+  std::cout
+    << std::format("tan(0, 2): {}, tan(PI/2, 2): {}, tan(PI, 2): {}", tan(0, 2), tan(pi / 2, 2), tan(pi, 2))
+    << std::endl
+    << std::endl;
 
-  std::cout << std::format(
-    "cot(0, 2): {}, cot(PI/2, 2): {}, cot(PI, 2): {}",
-    cot(0),
-    cot(pi / 2),
-    cot(pi)
-  ) << std::endl;
-  std::cout << std::format(
-    "cot(0, 2): {}, cot(PI/2, 2): {}, cot(PI, 2): {}",
-    cot(0, 2),
-    cot(pi / 2, 2),
-    cot(pi, 2)
-  ) << std::endl;
+  std::cout
+    << std::format("cot(0, 2): {}, cot(PI/2, 2): {}, cot(PI, 2): {}", cot(0), cot(pi / 2), cot(pi))
+    << std::endl;
+  std::cout
+    << std::format("cot(0, 2): {}, cot(PI/2, 2): {}, cot(PI, 2): {}",cot(0, 2), cot(pi / 2, 2), cot(pi, 2))
+    << std::endl
+    << std::endl;
 }
 
 constexpr double sin(double theta, double tolerance) {
