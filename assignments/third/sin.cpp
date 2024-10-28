@@ -55,7 +55,7 @@ int main() {
     << std::endl;
 }
 
-constexpr double sin(double theta, double tolerance) {
+constexpr double sin(const double theta, const double tolerance) {
   double sin = 0;
   double sum = theta;
 
@@ -67,32 +67,32 @@ constexpr double sin(double theta, double tolerance) {
   return sin;
 }
 
-constexpr double sin(double theta) {
+constexpr double sin(const double theta) {
   return sin(theta, irrelevant_factor);
 }
 
-constexpr double cos(double theta, double tolerance) {
+constexpr double cos(const double theta, const double tolerance) {
   // Could also be approximated similarly as above
   // (use odd indices instead of even indices)
   return sin(theta + (std::numbers::pi / 2), tolerance);
 }
 
-constexpr double cos(double theta) {
+constexpr double cos(const double theta) {
   return cos(theta, irrelevant_factor);
 }
 
-constexpr double tan(double theta, double tolerance) {
+constexpr double tan(const double theta, const double tolerance) {
   return sin(theta, tolerance) / cos(theta, tolerance);
 }
 
-constexpr double tan(double theta) {
+constexpr double tan(const double theta) {
   return tan(theta, irrelevant_factor);
 }
 
-constexpr double cot(double theta, double tolerance) {
+constexpr double cot(const double theta, const double tolerance) {
   return cos(theta, tolerance) / sin(theta, tolerance);
 }
 
-constexpr double cot(double theta) {
+constexpr double cot(const double theta) {
   return cot(theta, irrelevant_factor);
 }
