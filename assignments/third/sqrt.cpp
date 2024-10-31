@@ -21,7 +21,7 @@ int main() {
   std::cout << std::format("sqrt(2, 1.8): {}", sqrt(2, 1.8)) << std::endl;
 }
 
-constexpr double sqrt(double x, double tolerance) {
+constexpr double sqrt(const double x, const double tolerance) {
   if (x < 0) {
     throw std::domain_error("x must be greater/equal than zero!");
   }
@@ -35,6 +35,6 @@ constexpr double sqrt(double x, double tolerance) {
   return approximation;
 }
 
-constexpr double sqrt(double x) {
+constexpr double sqrt(const double x) {
   return sqrt(x, 1e-8);
 }
