@@ -1,6 +1,6 @@
 ## Nr. 4
 
-Wahrscheinlich funktionierender Code für Nr. 4:
+Code für Nr. 4 ([Link zur Godbolt-Instanz](https://godbolt.org/z/frqEYEEoq)):
 
 ```c++
 #define FMT_HEADER_ONLY // Dieses Makro ist nötig, um die Bibliothek simpel einzubinden
