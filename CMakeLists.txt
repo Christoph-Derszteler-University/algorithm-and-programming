@@ -16,5 +16,8 @@ add_executable(third_task_3 assignments/third/sqrt.cpp)
 add_executable(fourth_task_1_2 assignments/fourth/derszteler.cpp)
 add_executable(fourth_task_2 assignments/fourth/references.cpp)
 add_executable(fourth_task_3 assignments/fourth/examples/demo.cpp assignments/fourth/src/meine_funktionen.cpp assignments/fourth/include/meine_funktionen.hpp)
+add_executable(fifth_task_1 assignments/uebungscode_05/include/minsort_in_place.hpp assignments/uebungscode_05/src/minsort_in_place.cpp assignments/uebungscode_05/examples/aufg1.cpp)
+add_executable(fifth_task_2 assignments/uebungscode_05/include/hanoi/hanoi.hpp assignments/uebungscode_05/src/hanoi.cpp assignments/uebungscode_05/examples/aufg2.cpp)
+add_executable(fifth_task_3 assignments/uebungscode_05/include/hanoi/hanoi.hpp assignments/uebungscode_05/include/hanoi/hanoi_loesen.hpp assignments/uebungscode_05/src/hanoi.cpp assignments/uebungscode_05/src/hanoi_loesen.cpp assignments/uebungscode_05/examples/aufg3.cpp)
 
 target_link_libraries(fourth_task_3 fmt::fmt)

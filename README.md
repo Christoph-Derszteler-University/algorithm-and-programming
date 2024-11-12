@@ -15,3 +15,4 @@ Daher existiert dafür keine/kaum eine ordentliche Commit history.
   *Note: The proof of having played the `Oh-my-git` levels can also be found here:
   [https://imgur.com/ld0xiRc](https://imgur.com/ld0xiRc)*;
 - [Übungsblatt 4 (28.10.2024)](assignments/fourth)
+- [Übungsblatt 5 (04.11.2024)](assignments/uebungscode_05)
